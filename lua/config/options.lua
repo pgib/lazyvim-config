@@ -5,3 +5,10 @@ vim.g.mapleader = ","
 vim.colorscheme = "sonokai"
 vim.g.autoformat = false
 vim.g.lazyvim_picker = "fzf"
+
+-- Pick up changes made outside of Neovim
+vim.o.autoread = true
+vim.api.nvim_create_autocmd("CursorHold", {
+  pattern = "*",
+  command = "checktime",
+})
