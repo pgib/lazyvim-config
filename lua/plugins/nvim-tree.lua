@@ -4,9 +4,9 @@ return {
   config = function()
     local nvimtree = require("nvim-tree")
     nvimtree.setup({})
-
-    local keymap = vim.keymap
-    keymap.set("n", "<Leader>,", ":NvimTreeToggle<CR>", { noremap = true, silent = true, desc = "Toggle file browser" })
-    keymap.set("n", "<Leader>n", ":NvimTreeFindFile<CR>", { noremap = true, silent = true, desc = "Show current file in browser" })
-  end
+  end,
+  keys = {
+    { "<leader>,", "<cmd>NvimTreeToggle<cr>", desc = "Toggle file browser" },
+    { "<leader>n", "<cmd>NvimTreeFindFile<cr>", desc = "Show current file in browser" },
+  }
 }

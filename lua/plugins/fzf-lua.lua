@@ -1,16 +1,13 @@
+-- See original spec: https://www.lazyvim.org/extras/editor/fzf
 return {
   "ibhagwan/fzf-lua",
   -- optional for icon support
   dependencies = { "nvim-tree/nvim-web-devicons" },
   config = function()
     -- calling `setup` is optional for customization
-    --require("fzf-lua").setup({ { "telescope" } })
+    -- require("fzf-lua").setup({ { "telescope" } })
     -- require("fzf-lua").setup_fzfvim_cmds()
     require('fzf-lua').setup({'fzf-vim'})
-
-    local map = vim.keymap.set
-    map("n", ";", "FzfLua buffers<cr>", { noremap = true, silent = true })
-    map("n", ";;", "FzfLua buffers<cr>", { noremap = true, silent = true })
   end,
   opts = function(_, opts)
     local fzf = require("fzf-lua")
@@ -34,4 +31,7 @@ return {
       },
     }
   end,
+  keys = {
+    { ";", "<cmd>FzfLua buffers<cr>", desc = "Switch Buffer", },
+  }
 }
