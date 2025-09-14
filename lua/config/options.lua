@@ -4,7 +4,7 @@
 vim.g.mapleader = ","
 vim.colorscheme = "sonokai"
 vim.g.autoformat = false
-vim.g.lazyvim_picker = "fzf"
+-- vim.g.lazyvim_picker = "fzf"
 
 -- Pick up changes made outside of Neovim
 vim.o.autoread = true
